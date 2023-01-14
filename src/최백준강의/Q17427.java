@@ -1,17 +1,12 @@
 package 최백준강의;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Q17427 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        StringBuilder sb = new StringBuilder();
-
-        int T = Integer.parseInt(br.readLine());
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
         long[] f = new long[1000001];
         long[] g = new long[1000001];
 
@@ -23,15 +18,11 @@ public class Q17427 {
             }
         }
 
+        // g0 = 1
+        // g1 =
 
         for (int i = 1; i < f.length; i++) {
-            g[i] = g[i-1] + f[i];
+            g[i] = g[i-1] + i;
         }
-
-        for (int i = 0; i < T; i++) {
-            int N = Integer.parseInt(br.readLine());
-            sb.append(g[N]).append("\n");
-        }
-        System.out.println(sb);
     }
 }
